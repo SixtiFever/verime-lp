@@ -1,4 +1,4 @@
-import { ShieldCheck, Radio, Smartphone, ClipboardList } from 'lucide-react'
+import { ShieldCheck, Radio, ShieldBan, ClipboardList } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './Features.css'
 
@@ -7,9 +7,9 @@ const STROKE = 2
 
 const features = [
   {
-    title: 'IdP Connected',
+    title: 'Identity Provider integration',
     description:
-      "Every identity verification sent by your callers is authenticated by your organisation's identity provider — meaning only genuine employees can send them. Your IdP is the single point of control; scammers can't impersonate what they can't access.",
+      'VeriMe connects directly to your Identity Provider, so verification authority stays where your security team already manages access. Only authenticated employees can send verifications — and when someone leaves, that ability goes with them. No new identity silo, no manual provisioning.',
     Icon: ShieldCheck,
   },
   {
@@ -19,15 +19,15 @@ const features = [
     Icon: Radio,
   },
   {
-    title: 'Public-facing app',
+    title: 'Protection against impersonation',
     description:
-      'A purpose-built mobile app where call receivers can view and confirm verifications.',
-    Icon: Smartphone,
+      "Scammers can spoof numbers, clone voices, and sound exactly like your team — but they can't produce an authenticated verification. Every verification is cryptographically tied to your organisation. Receivers get proof they can trust; your brand stays out of the hands of impersonators.",
+    Icon: ShieldBan,
   },
   {
     title: 'Audit trail',
     description:
-      'Keep track of every verification sent by your outbound callers, for auditing and compliance purposes.',
+      'Every verification your outbound callers send is logged in a full audit trail. Track who verified whom, when, and on which call — giving compliance and security teams the visibility they need for investigations, reporting, and regulatory requirements.',
     Icon: ClipboardList,
   },
 ]
@@ -43,10 +43,13 @@ export function Features() {
       aria-labelledby="features-heading"
     >
       <div className="container">
-        <h2 id="features-heading" className="features__intro">
-          A new trust layer that protects both organisations and the public against impersonation
-          phone scams.
-        </h2>
+        <header className="features__header">
+          <p className="features__eyebrow">Key features</p>
+          <h2 id="features-heading">
+            A new trust layer that protects both organisations and the public against impersonation
+            phone scams.
+          </h2>
+        </header>
 
         <ul className="features__grid">
           {features.map(({ title, description, Icon }) => (

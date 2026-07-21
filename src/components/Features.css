@@ -4,9 +4,18 @@
   scroll-margin-top: var(--nav-height);
 }
 
-.features__intro {
+.features__header {
   max-width: 42rem;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-10);
+}
+
+.features__eyebrow {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
 }
 
 .features__grid {
