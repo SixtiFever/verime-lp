@@ -1,9 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './ProblemSolution.css'
-import section2Image from '../assets/undraw_authentication_1evl.png'
-
-/** Swap this path when you add your final image or graphic (e.g. .png, .webp, .jpg). */
-const SECTION_2_IMAGE_SRC = section2Image
 
 export function ProblemSolution() {
   const revealRef = useScrollReveal<HTMLElement>()
@@ -37,17 +33,23 @@ export function ProblemSolution() {
           </div>
         </div>
 
-        <figure className="problem-solution__media">
-          <img
-            className="problem-solution__image"
-            src={SECTION_2_IMAGE_SRC}
-            alt=""
-            width={800}
-            height={600}
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
+        <div className="problem-solution__stat">
+          <p className="problem-solution__stat-value">70%</p>
+          <p className="problem-solution__stat-label">
+            of UK consumers distrust calls from numbers they don&apos;t recognise.
+          </p>
+          {/* <p className="problem-solution__stat-source">
+            Source:{' '}
+            <a
+              href="https://www.maxcontact.com/downloads/voice-of-the-uk-consumer-2026"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Voice of the UK Consumer 2026
+            </a>
+            , MaxContact
+          </p> */}
+        </div>
       </div>
     </section>
   )

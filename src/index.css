@@ -31,6 +31,7 @@
   --text-hero: clamp(2rem, 4vw + 1rem, 3.25rem);
 
   --font-sans: 'Source Sans 3', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-logo: 'Quicksand', var(--font-sans);
   --container-max: 72rem;
   --nav-height: 4rem;
   --radius-sm: 6px;

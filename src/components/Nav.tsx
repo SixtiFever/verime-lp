@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import logo from '../assets/logo1.png'
+import textLogo from '../assets/text_logo.png'
 import { useNavScrolled } from '../hooks/useNavScrolled'
 import './Nav.css'
 
@@ -21,7 +23,14 @@ export function Nav() {
     <header className={`site-header${scrolled ? ' site-header--scrolled' : ''}`}>
       <div className="container site-header__inner">
         <a className="site-header__logo" href="#" onClick={closeMenu}>
-          VeriMe
+          <img className="site-header__logo-icon" src={logo} alt="" width={267} height={266} />
+          <img
+            className="site-header__logo-wordmark"
+            src={textLogo}
+            alt="VeriMe"
+            width={1537}
+            height={352}
+          />
         </a>
 
         <button

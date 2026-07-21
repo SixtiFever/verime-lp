@@ -5,10 +5,7 @@
 
 .how-it-works__intro {
   max-width: 40rem;
-  margin-bottom: var(--space-12);
-  font-size: var(--text-xl);
-  font-weight: 600;
-  line-height: 1.35;
+  margin-bottom: var(--space-8);
 }
 
 .how-it-works__number-track {

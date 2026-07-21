@@ -30,11 +30,26 @@
 }
 
 .site-header__logo {
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-heading);
+  display: inline-flex;
+  align-items: flex-end;
+  gap: var(--space-2);
   text-decoration: none;
-  letter-spacing: -0.02em;
+}
+
+.site-header__logo-icon {
+  display: block;
+  height: var(--logo-icon-height, 2.5rem);
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.site-header__logo-wordmark {
+  display: block;
+  height: calc(var(--logo-icon-height, 2.5rem) * 0.5);
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .site-header__toggle {

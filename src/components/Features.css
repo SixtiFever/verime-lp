@@ -6,10 +6,7 @@
 
 .features__intro {
   max-width: 42rem;
-  margin-bottom: var(--space-10);
-  font-size: var(--text-xl);
-  font-weight: 600;
-  line-height: 1.35;
+  margin-bottom: var(--space-8);
 }
 
 .features__grid {
