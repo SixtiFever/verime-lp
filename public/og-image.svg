@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#F8F9FB"/>
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="120" y="280" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="#0F172A">VeriMe</text>
+  <text x="120" y="360" font-family="system-ui, sans-serif" font-size="32" fill="#475569">Verified outbound caller identity</text>
+  <circle cx="980" cy="315" r="80" fill="#0D9488" fill-opacity="0.15"/>
+  <path d="M940 315 L970 345 L1020 285" stroke="#0D9488" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
