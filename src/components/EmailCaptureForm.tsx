@@ -21,8 +21,12 @@ export function EmailCaptureForm({ inputId, compact = false }: EmailCaptureFormP
     setError(null)
 
     const trimmed = email.trim()
-    if (!trimmed || !EMAIL_PATTERN.test(trimmed)) {
-      setError('Please enter a valid email address.')
+    if (!trimmed) {
+      setError('Please enter your email')
+      return
+    }
+    if (!EMAIL_PATTERN.test(trimmed)) {
+      setError('Please enter a valid email')
       return
     }
 
@@ -44,7 +48,9 @@ export function EmailCaptureForm({ inputId, compact = false }: EmailCaptureFormP
         role="status"
       >
         <CheckCircle2 className="email-capture__success-icon" aria-hidden="true" size={28} strokeWidth={2} />
-        <p className="email-capture__success-text">Thanks — we&apos;ll be in touch</p>
+        <p className="email-capture__success-text">
+          Thanks! We&apos;ll be in touch soon with early access details.
+        </p>
       </div>
     )
   }
@@ -63,13 +69,16 @@ export function EmailCaptureForm({ inputId, compact = false }: EmailCaptureFormP
           autoComplete="email"
           placeholder="you@organisation.co.uk"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value)
+            setError(null)
+          }}
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? `${inputId}-error` : `${inputId}-privacy`}
           disabled={submitting}
         />
         <button className="email-capture__button" type="submit" disabled={submitting}>
-          I&apos;m interested
+          {submitting ? 'Submitting...' : "I'm interested"}
         </button>
       </form>
       {error && (
