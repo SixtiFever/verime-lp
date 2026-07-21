@@ -1,8 +1,9 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './ProblemSolution.css'
+import section2Image from '../assets/undraw_authentication_1evl.png'
 
 /** Swap this path when you add your final image or graphic (e.g. .png, .webp, .jpg). */
-const SECTION_2_IMAGE_SRC = '/images/section-2-visual.svg'
+const SECTION_2_IMAGE_SRC = section2Image
 
 export function ProblemSolution() {
   const revealRef = useScrollReveal<HTMLElement>()
@@ -46,10 +47,6 @@ export function ProblemSolution() {
             loading="lazy"
             decoding="async"
           />
-          <figcaption className="problem-solution__caption">
-            Placeholder — update <code>SECTION_2_IMAGE_SRC</code> in{' '}
-            <code>ProblemSolution.tsx</code> when your graphic is ready.
-          </figcaption>
         </figure>
       </div>
     </section>
