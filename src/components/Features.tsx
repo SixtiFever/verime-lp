@@ -21,13 +21,13 @@ const features = [
   {
     title: 'Protection against impersonation',
     description:
-      "Scammers can spoof numbers, clone voices, and sound exactly like your team — but they can't produce an authenticated verification. Every verification is cryptographically tied to your organisation. Receivers get proof they can trust; your brand stays out of the hands of impersonators.",
+      "Scammers can spoof numbers, clone voices, and sound exactly like your team, but they can't produce an authenticated verification. Every verification is cryptographically tied to your organisation. Receivers get proof they can trust; your brand stays out of the hands of impersonators.",
     Icon: ShieldBan,
   },
   {
     title: 'Audit trail',
     description:
-      'Every verification your outbound callers send is logged in a full audit trail. Track who verified whom, when, and on which call — giving compliance and security teams the visibility they need for investigations, reporting, and regulatory requirements.',
+      'Every verification your outbound callers send is logged in a full audit trail. Track who verified whom, when, and on which call - giving compliance and security teams the visibility they need for investigations, reporting, and regulatory requirements.',
     Icon: ClipboardList,
   },
 ]

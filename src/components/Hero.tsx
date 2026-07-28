@@ -13,7 +13,7 @@ export function Hero() {
           </h1>
           <p className="hero__lead">
             VeriMe enables your outbound callers to send live, in-call
-            identity verification straight from your Identity Provider, so the call receiver knows exactly who they&apos;re talking to.
+            proof of identity straight from your Identity Provider, so the call receiver knows exactly who they&apos;re talking to.
           </p>
           <div id="waitlist" className="hero__cta">
             <EmailCaptureForm inputId="waitlist-email" />
