@@ -1,7 +1,9 @@
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { ProblemSolution } from './components/ProblemSolution'
+import { Differentiation } from './components/Differentiation'
 import { HowItWorks } from './components/HowItWorks'
+import { Benefits } from './components/Benefits'
 import { Features } from './components/Features'
 import { Footer } from './components/Footer'
 
@@ -16,6 +18,8 @@ function App() {
         <Hero />
         <ProblemSolution />
         <HowItWorks />
+        <Benefits />
+        {/* <Differentiation /> */}
         <Features />
       </main>
       <Footer />

@@ -1,15 +1,15 @@
-.features {
-  background: var(--color-bg-elevated);
-  border-top: 1px solid var(--color-border);
+.benefits {
   scroll-margin-top: var(--nav-height);
+  background: var(--color-bg-elevated);
+  border-block: 1px solid var(--color-border);
 }
 
-.features__header {
+.benefits__header {
   max-width: 42rem;
   margin-bottom: var(--space-10);
 }
 
-.features__eyebrow {
+.benefits__eyebrow {
   margin: 0 0 var(--space-3);
   font-size: var(--text-sm);
   font-weight: 700;
@@ -18,7 +18,7 @@
   color: var(--color-accent);
 }
 
-.features__grid {
+.benefits__grid {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -27,26 +27,20 @@
 }
 
 @media (min-width: 768px) {
-  .features__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .benefits__grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
   }
 }
 
-@media (min-width: 960px) {
-  .features__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.features__card {
+.benefits__card {
   padding: var(--space-6);
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
 }
 
-.features__icon {
+.benefits__icon {
   display: inline-flex;
   padding: var(--space-3);
   margin-bottom: var(--space-4);
@@ -55,10 +49,12 @@
   border-radius: var(--radius-sm);
 }
 
-.features__card h3 {
+.benefits__card h3 {
   margin-bottom: var(--space-3);
 }
 
-.features__card p {
+.benefits__card p {
+  margin: 0;
   font-size: var(--text-base);
+  line-height: 1.6;
 }

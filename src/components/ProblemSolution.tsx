@@ -13,9 +13,9 @@ export function ProblemSolution() {
       <div className="container problem-solution__grid">
         <div className="problem-solution__copy">
           <header className="problem-solution__header">
-            <p className="problem-solution__eyebrow">The Why</p>
+            <p className="problem-solution__eyebrow">Why</p>
             <h2 id="problem-heading">
-              Callers can prove their identity. Call receivers can know who they&apos;re talking to.
+              Stamping out phone scamming
             </h2>
           </header>
 
@@ -30,7 +30,7 @@ export function ProblemSolution() {
           <div className="problem-solution__block problem-solution__block--solution">
             <p>
               VeriMe is the caller verification system that lets your outbound callers build
-              immediate trust with receivers, and empowers them differentiate between scammers and genuine
+              immediate trust with receivers, and empowers them to differentiate between scammers and genuine
               callers.
             </p>
           </div>

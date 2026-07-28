@@ -1,4 +1,4 @@
-import { Link2, Phone, CircleCheck } from 'lucide-react'
+import { Link2, Phone, CircleCheck, ShieldCheck } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './HowItWorks.css'
 
@@ -9,21 +9,28 @@ const steps = [
   {
     number: '01',
     title: 'Connect',
-    description: 'Link your enterprise Identity Provider to your VeriMe account in minutes.',
+    description: 'Link your VeriMe account to your enterprise Identity Provider in seconds.',
     Icon: Link2,
   },
   {
     number: '02',
     title: 'Call',
-    description: 'Call your customers and prospects as usual, no change to your workflow.',
+    description: 'Call your customers, residents or prospects as usual.',
     Icon: Phone,
   },
   {
     number: '03',
-    title: 'Confirm',
+    title: 'Verify',
     description:
-      'Send live identity verifications to call receivers, proving your identity and confirming the call is genuinely from your organisation.',
+      'Provide live proof of identity to the receiver during the call, authenticated by the connected identity provider.',
     Icon: CircleCheck,
+  },
+  {
+    number: '04',
+    title: 'Trust',
+    description:
+      'The call receiver sees the verified caller\'s details on the VeriMe app, and can confidently continue the conversation.',
+    Icon: ShieldCheck,
   },
 ]
 
@@ -39,9 +46,9 @@ export function HowItWorks() {
     >
       <div className="container">
         <header className="how-it-works__header">
-          <p className="how-it-works__eyebrow">How it works</p>
+          <p className="how-it-works__eyebrow">How VeriMe works</p>
           <h2 id="how-heading">
-            Send instant proof of identity to call receivers without hanging up.
+            Verify every call, easily.
           </h2>
         </header>
 

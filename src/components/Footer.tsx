@@ -16,7 +16,7 @@ export function Footer() {
           <div className="site-footer__brand">
             <span className="site-footer__logo">VeriMe</span>
             <p className="site-footer__tagline">
-              hello@verime.co.uk
+              jason@verime.uk
             </p>
           </div>
 
