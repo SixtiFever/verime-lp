@@ -15,6 +15,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const ALLOWED_ORIGIN_PATTERNS = [
   /^http:\/\/localhost:\d+$/,
   /^https:\/\/([\w-]+\.)?verime\.co\.uk$/,
+  /^https:\/\/([\w-]+\.)?verime\.uk$/,
 ];
 
 /**
@@ -49,7 +50,6 @@ export const submitEmail = onRequest(
   {
     region: "europe-west2",
     secrets: [sendpulseClientId, sendpulseSecretKey],
-    invoker: "public",
     maxInstances: 10,
   },
   async (req, res) => {
