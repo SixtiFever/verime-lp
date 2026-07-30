@@ -5,6 +5,7 @@ import { HowItWorks } from './components/HowItWorks'
 import { Benefits } from './components/Benefits'
 import { Features } from './components/Features'
 import { Footer } from './components/Footer'
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Features />
       </main>
       <Footer />
+      <Analytics />
     </>
   )
 }

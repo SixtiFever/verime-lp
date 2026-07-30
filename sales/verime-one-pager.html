@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeriMe — Restore Trust in Outbound Calls</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #1e3a5f;
+      --primary-deep: #152a45;
+      --accent: #0d9488;
+      --accent-muted: rgba(13, 148, 136, 0.12);
+      --heading: #0f172a;
+      --text: #475569;
+      --border: #e2e8f0;
+      --bg: #f8f9fb;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      margin: 0;
+      padding: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 11mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 45% at 100% -5%, rgba(13, 148, 136, 0.10), transparent 55%),
+        radial-gradient(ellipse 55% 40% at -5% 100%, rgba(30, 58, 95, 0.08), transparent 50%),
+        linear-gradient(180deg, #f4f7fa 0%, #ffffff 28%, #ffffff 72%, #f3f6f9 100%);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 7mm;
+      padding-bottom: 4.5mm;
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+    }
+
+    .brand__icon {
+      width: 11mm;
+      height: 11mm;
+      object-fit: contain;
+    }
+
+    .brand__wordmark {
+      height: 7.5mm;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .header__tag {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 6mm;
+    }
+
+    .hero h1 {
+      font-family: 'Quicksand', 'Source Sans 3', sans-serif;
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 2.5mm;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero__sub {
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: var(--text);
+      max-width: 165mm;
+    }
+
+    /* Two-col problem / solution */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      margin-bottom: 5.5mm;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 2.5mm;
+      padding: 4.5mm 5mm;
+    }
+
+    .panel--solution {
+      border-color: rgba(13, 148, 136, 0.35);
+      background: linear-gradient(160deg, rgba(13, 148, 136, 0.06), var(--white) 55%);
+    }
+
+    .panel__label {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 2.5mm;
+    }
+
+    .panel--solution .panel__label {
+      color: var(--accent);
+    }
+
+    .panel ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2mm;
+    }
+
+    .panel li {
+      font-size: 9pt;
+      line-height: 1.35;
+      padding-left: 4mm;
+      position: relative;
+    }
+
+    .panel li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 2mm;
+      height: 2mm;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .panel--solution li::before {
+      background: var(--accent);
+    }
+
+    .panel li strong {
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    .panel__body {
+      font-size: 9pt;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    .panel__body strong {
+      color: var(--heading);
+    }
+
+    /* How it works */
+    .section {
+      margin-bottom: 5mm;
+    }
+
+    .section__label {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 3mm;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+    }
+
+    .step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 2.5mm;
+      padding: 3.5mm 3.5mm 4mm;
+      position: relative;
+    }
+
+    .step__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 6mm;
+      height: 6mm;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 8pt;
+      font-weight: 700;
+      margin-bottom: 2mm;
+    }
+
+    .step h3 {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 1.2mm;
+    }
+
+    .step p {
+      font-size: 8pt;
+      line-height: 1.35;
+      color: var(--text);
+    }
+
+    /* Why VeriMe */
+    .why {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5mm;
+    }
+
+    .why__item {
+      padding: 3.5mm 4mm;
+      border-radius: 2.5mm;
+      background: var(--accent-muted);
+      border-left: 2.5px solid var(--accent);
+    }
+
+    .why__item h3 {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 1.2mm;
+    }
+
+    .why__item p {
+      font-size: 8pt;
+      line-height: 1.35;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5mm 4mm;
+    }
+
+    .feature {
+      padding: 2mm 0;
+    }
+
+    .feature h3 {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 0.8mm;
+    }
+
+    .feature h3::before {
+      content: '';
+      display: inline-block;
+      width: 1.8mm;
+      height: 1.8mm;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 1.8mm;
+      vertical-align: middle;
+      transform: translateY(-0.5px);
+    }
+
+    .feature p {
+      font-size: 8pt;
+      line-height: 1.35;
+      padding-left: 3.6mm;
+    }
+
+    /* CTA footer */
+    .cta {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5mm;
+      align-items: stretch;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-deep) 100%);
+      color: var(--white);
+      border-radius: 3mm;
+      padding: 5mm 6mm;
+    }
+
+    .cta h2 {
+      font-family: 'Quicksand', 'Source Sans 3', sans-serif;
+      font-size: 13pt;
+      font-weight: 700;
+      margin-bottom: 1.8mm;
+      letter-spacing: -0.01em;
+    }
+
+    .cta p {
+      font-size: 8.5pt;
+      line-height: 1.4;
+      opacity: 0.92;
+    }
+
+    .cta__contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5mm;
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+      padding-left: 5mm;
+    }
+
+    .cta__contact a,
+    .cta__contact span {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 9pt;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .cta__contact .label {
+      font-size: 7.5pt;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.5mm;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <img class="brand__icon" src="../src/assets/logo1.png" alt="" />
+        <img class="brand__wordmark" src="../src/assets/text_logo.png" alt="VeriMe" />
+      </div>
+      <p class="header__tag">Caller Verification</p>
+    </header>
+
+    <section class="hero">
+      <h1>Restore Trust in <span>Outbound Calls</span></h1>
+      <p class="hero__sub">
+        VeriMe delivers live, in-call proof of identity — authenticated by your identity provider —
+        so customers know it’s really you calling.
+      </p>
+    </section>
+
+    <div class="split">
+      <section class="panel">
+        <p class="panel__label">The Problem</p>
+        <ul>
+          <li><strong>Rising Fraud:</strong> Phone scams are increasing in number and sophistication.</li>
+          <li><strong>Brand Damage:</strong> Scammers impersonate trusted organisations to con the public.</li>
+          <li><strong>Dead Channel:</strong> Customers no longer answer because phone communication is broken.</li>
+        </ul>
+      </section>
+
+      <section class="panel panel--solution">
+        <p class="panel__label">The Solution</p>
+        <p class="panel__body">
+          <strong>VeriMe</strong> is a caller verification system that delivers live, in-call proof of identity to call receivers.
+          Authenticated by your identity provider, it ensures only genuine employees can verify themselves,
+          completely shutting out scammers.
+        </p>
+      </section>
+    </div>
+
+    <section class="section">
+      <p class="section__label">How It Works</p>
+      <div class="steps">
+        <article class="step">
+          <span class="step__num">1</span>
+          <h3>Connect</h3>
+          <p>Connect your identity provider to VeriMe once.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">2</span>
+          <h3>Call</h3>
+          <p>Call customers or residents as normal.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">3</span>
+          <h3>Verify</h3>
+          <p>Send live, secure proof of identity mid-call.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">4</span>
+          <h3>Confirm</h3>
+          <p>Receivers instantly view your name, role, and company via the VeriMe app.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section__label">Why VeriMe?</p>
+      <div class="why">
+        <article class="why__item">
+          <h3>Protect the Public</h3>
+          <p>Receivers instantly spot scams and hang up safely.</p>
+        </article>
+        <article class="why__item">
+          <h3>Shield Your Brand</h3>
+          <p>Stop fraud by ensuring scammers cannot fake your ID.</p>
+        </article>
+        <article class="why__item">
+          <h3>Boost Answer Rates</h3>
+          <p>Turn the phone back into your most trusted channel.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section__label">Key Features</p>
+      <div class="features">
+        <article class="feature">
+          <h3>Enterprise Security</h3>
+          <p>Connects directly to your existing Identity Provider.</p>
+        </article>
+        <article class="feature">
+          <h3>Individual ID</h3>
+          <p>Shows the caller’s specific name and role, not just the brand.</p>
+        </article>
+        <article class="feature">
+          <h3>Real-Time Proof</h3>
+          <p>Sends verification during the call without requiring a hang-up.</p>
+        </article>
+        <article class="feature">
+          <h3>Zero Integration</h3>
+          <p>Works instantly alongside your existing phone system.</p>
+        </article>
+        <article class="feature">
+          <h3>Privacy First</h3>
+          <p>Temporary verification sessions are never stored long-term.</p>
+        </article>
+        <article class="feature">
+          <h3>Full Audit Trail</h3>
+          <p>Every single verification is logged for compliance.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="cta">
+      <div>
+        <h2>Join Our Pilot</h2>
+        <p>
+          We are currently engaging with local government and housing associations.
+          Have a say in shaping VeriMe through a free pilot and design partnership.
+        </p>
+      </div>
+      <div class="cta__contact">
+        <span class="label">Contact</span>
+        <a href="mailto:jason@verime.uk">jason@verime.uk</a>
+        <a href="tel:+447765994827">07765 994827</a>
+        <a href="https://www.verime.uk">www.verime.uk</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
